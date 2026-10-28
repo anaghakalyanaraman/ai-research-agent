@@ -6,7 +6,7 @@ import os
 
 load_dotenv()
 
-llm = ChatGroq(model="allam-2-7b", api_key=os.getenv("GROQ_API_KEY"))
+llm = ChatGroq(model="openai/gpt-oss-20b", api_key=os.getenv("GROQ_API_KEY"))
 search_tool = TavilySearch(max_results=1)
 agent = create_react_agent(llm, [search_tool])
 
@@ -15,7 +15,7 @@ def run_research(topic: str) -> dict:
         {
             "messages": [
                 ("system", "Search the web and write a cited report. Only use facts from search results."),
-                ("human", f"Research this topic: {topic}")
+                ("human", f"Research: {topic}")
             ]
         },
         config={"recursion_limit": 10}
