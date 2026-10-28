@@ -17,19 +17,14 @@ An autonomous AI research agent that searches the web in real-time, synthesizes 
 
 ## How It Works
 
-User submits a topic
-↓
-LangGraph ReAct Agent starts
-↓
-[Loop]
-├── LLM decides: search or answer?
-├── If search → Tavily API fetches real web results
-├── LLM reads results and decides next action
-└── Repeat until confident answer is ready
-↓
-Final report with citations returned
-↓
-LangSmith traces every step
+1. User submits a topic
+2. LangGraph ReAct Agent starts
+3. **Loop:** LLM decides whether to search or answer
+   - If search → Tavily API fetches real web results
+   - LLM reads results and decides next action
+   - Repeat until confident answer is ready
+4. Final report with citations returned
+5. LangSmith traces every step in production
 
 ---
 
