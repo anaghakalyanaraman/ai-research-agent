@@ -6,7 +6,7 @@ import os
 
 load_dotenv()
 
-llm = ChatGroq(model="openai/gpt-oss-20b", api_key=os.getenv("GROQ_API_KEY"))
+llm = ChatGroq(model="openai/gpt-oss-120b", api_key=os.getenv("GROQ_API_KEY"))
 search_tool = TavilySearch(max_results=1)
 agent = create_react_agent(llm, [search_tool])
 
