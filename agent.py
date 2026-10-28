@@ -18,7 +18,7 @@ def run_research(topic: str) -> dict:
                 ("human", f"Research: {topic}")
             ]
         },
-        config={"recursion_limit": 10}
+        config={"recursion_limit": 25}
     )
     
     final_message = result["messages"][-1].content
